@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/vanchagreen/meadandread/issues"
   },
-  "homepage": "https://github.com/vanchagreen/meadandread#readme"
+  "homepage": "https://github.com/vanchagreen/meadandread#readme",
+  "dependencies": {
+    "duckbase": "0.1.1",
+    "firebase": "4.1.2",
+    "material-ui": "0.18.3",
+    "prop-types": "15.5.10",
+    "react": "15.5.4",
+    "react-dom": "15.5.4",
+    "react-redux": "5.0.5",
+    "react-tap-event-plugin": "2.0.1"
+  }
 }
