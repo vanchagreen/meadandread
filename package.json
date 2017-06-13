@@ -1,0 +1,19 @@
+{
+  "name": "meadandread",
+  "version": "1.0.0",
+  "description": "Meading and Reading",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanchagreen/meadandread.git"
+  },
+  "author": "Mackenzie Fernandez <MackenzieLFernandez@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vanchagreen/meadandread/issues"
+  },
+  "homepage": "https://github.com/vanchagreen/meadandread#readme"
+}
