@@ -1,0 +1,16 @@
+.loginForm {
+  display: flex;
+  justify-content: center;
+  
+  & > * {
+    margin: 2rem;
+    padding: 2rem;
+  }
+
+  .btn {
+    & > * {
+      color: white !important;
+      margin: 1rem;
+    }
+  }
+}
