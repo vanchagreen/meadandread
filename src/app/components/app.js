@@ -17,7 +17,7 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import AccountIcon from 'material-ui/svg-icons/action/account-box';
 import * as Colors from '../constants/colors';
-import * as AccountUtils from '../utils/accountUtils';
+import * as BookClubUtils from '../utils/bookClubUtils';
 
 injectTapEventPlugin();
 
@@ -32,9 +32,8 @@ class App extends Component {
   renderUserMenu(currentUser) {
     if (!currentUser || !currentUser.uid) {
       return (
-        <div className='login-register'>
+        <div className='login'>
           <li key={1}><Link to='/login'>Login</Link></li>
-          <li key={2}><Link to='/signup'>Sign Up</Link></li>
         </div>
       );
     }
@@ -79,7 +78,7 @@ class App extends Component {
     const headerProps = {
       className: 'mainHeader',
       iconElementRight: this.renderUserMenu(this.props.currentUser),
-      iconElementLeft: this.getAppDrawer(),
+      // iconElementLeft: this.getAppDrawer(),
       title: <Link to='/'>Mead & Read</Link>
     };
     return <AppBar {...headerProps} />;
@@ -100,7 +99,7 @@ class App extends Component {
 const mapStateToProps = (state) => {
   const currentUser = state.currentUser;
   const userId = currentUser && currentUser.uid;
-  const accountId = AccountUtils.getAccountId(state);
+  const accountId = BookClubUtils.getBookClubId(state);
 
   return {
     currentUser: state.currentUser,
