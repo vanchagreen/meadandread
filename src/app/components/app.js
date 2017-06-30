@@ -89,7 +89,7 @@ class App extends Component {
       <div className='app'>
         {this.getAppHeader()}
         <div className='appContentContainer'>
-          {this.props.isLoading ? <Loading /> : <AppRoutes />}
+          <AppRoutes />
         </div>
       </div>
     );
@@ -99,11 +99,11 @@ class App extends Component {
 const mapStateToProps = (state) => {
   const currentUser = state.currentUser;
   const userId = currentUser && currentUser.uid;
-  const accountId = BookClubUtils.getBookClubId(state);
+  const bookClubIds = BookClubUtils.getBookClubIds(state);
 
   return {
-    currentUser: state.currentUser,
-    isLoading: !!userId && !accountId,
+    bookClubIds,
+    currentUser,
     userId
   };
 };

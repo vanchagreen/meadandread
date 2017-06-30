@@ -1,0 +1,23 @@
+.emptySlate {
+  width: 50rem;
+  margin: auto;
+  margin-top: 7rem;
+
+  .emptyMessage {
+    text-align: center;
+    padding: 2rem;
+    font-size: 175%;
+  }
+
+  .createOrJoin {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 3rem;
+
+    .divider {
+      border: 1px solid grey;
+      height: 5rem;
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { FlatButton, Paper, RaisedButton, TextField } from 'material-ui';
-import { loginUser, loginWithProvider } from '../../actions/firebaseUserActions';
+import { loginUser, loginWithProvider, registerUser } from '../../actions/firebaseUserActions';
 
 import './login.scss';
 
@@ -61,7 +61,7 @@ class UserLogin extends Component {
             <TextField type='password' id='txtPass' ref='password' hintText='Password' name='password' />
           </div>
           <div>{this.state.message}</div>
-          <RaisedButton type='submit'>{this.state.isLoggingIn ? 'Login' : 'Sign Up'}</RaisedButton>
+          <RaisedButton type='submit' onTouchTap={this.onFormSubmit}>{this.state.isLoggingIn ? 'Login' : 'Sign Up'}</RaisedButton>
           <br />
           {this.state.isLoggingIn && <div>{/*<h5><Link to='/reset'>Forgot password?</Link></h5>*/}
             <FlatButton onTouchTap={() => this.setState({ isLoggingIn: false })}>Sign Up</FlatButton></div>}
@@ -82,6 +82,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     loginUser,
     loginWithProvider,
+    registerUser
   }, dispatch);
 }
 
