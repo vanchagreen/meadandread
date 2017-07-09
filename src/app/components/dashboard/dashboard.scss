@@ -1,0 +1,10 @@
+.bookClubList {
+  display: flex;
+  flex-wrap: wrap;
+
+  .bookClubPaper {
+    width: 25rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
+}

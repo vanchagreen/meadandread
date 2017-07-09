@@ -2,13 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Paper, TextField, RaisedButton } from 'material-ui';
 
-import './emptySlate.scss';
+import './createOrJoin.scss';
 
-export default class EmptySlate extends React.Component {
+export default class CreateOrJoin extends React.Component {
+  static propTypes = {
+    toggleCreateClubModal: PropTypes.func.isRequired
+  };
+
   getCreateContent = () => {
     return (
       <div>
-        <RaisedButton label='Create a book club!' primary={true}/>
+        <RaisedButton label='Create a book club!' onTouchTap={() => this.props.toggleCreateClubModal(true)} primary={true}/>
       </div>
     )
   }
@@ -27,7 +31,6 @@ export default class EmptySlate extends React.Component {
   render () {
     return (
       <Paper className='emptySlate'>
-        <div className='emptyMessage'>Looks like you don't have any book clubs yet!</div>
         <div className='createOrJoin'>
           { this.getCreateContent() }          
           <div className='divider'></div>
