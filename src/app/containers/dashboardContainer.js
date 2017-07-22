@@ -22,7 +22,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     createNewClub: (clubInfo) => dispatch(BookActions.createBookClub(clubInfo)),
-    toggleCreateClubModal: (isOpen) => dispatch(ModalActions.toggleCreateClubModal(isOpen))
+    toggleCreateClubModal: (isOpen) => dispatch(ModalActions.toggleCreateClubModal(isOpen)),
+    joinTheClub: (inviteCode) => dispatch(BookActions.joinTheClub(inviteCode))
   };
 };
 

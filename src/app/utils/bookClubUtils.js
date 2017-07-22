@@ -13,9 +13,17 @@ export function getBookClubs(state) {
   return FirebaseUtils.getValue(state.firebase, `/bookClub`) || {};
 }
 
+export function getBookClub(state, bookClubId) {
+  return FirebaseUtils.getValue(state.firebase, `/bookClub/${bookClubId}`) || {};  
+}
+
 export function getBookClubIds(state) {
   const currentUserId = state.currentUser && state.currentUser.uid;
   return FirebaseUtils.getValue(state.firebase, `/users/${currentUserId}/bookClubs`) || {};
+}
+
+export function joinTheClub(inviteCode, userId) {
+  return FirebaseUtils.firebaseDb.ref('queues/joinTheClub/tasks').push({inviteCode, userId});
 }
 
 export function nextUpcomingBook(selectedBookList) {

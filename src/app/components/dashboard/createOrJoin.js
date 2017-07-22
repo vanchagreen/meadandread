@@ -9,6 +9,18 @@ export default class CreateOrJoin extends React.Component {
     toggleCreateClubModal: PropTypes.func.isRequired
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      clubCode: ''
+    };
+  }
+
+  joinTheClub = () => {
+    this.props.joinTheClub(this.state.clubCode);
+    this.setState({ clubCode: '' });
+  }
+
   getCreateContent = () => {
     return (
       <div>
@@ -22,8 +34,8 @@ export default class CreateOrJoin extends React.Component {
     return (
       <div>
         <div>Join an existing one </div>
-        <TextField floatingLabelText='Book Club Code' />
-        <RaisedButton label='Join' primary={true} style={style} />
+        <TextField floatingLabelText='Book Club Code' onChange={e => this.setState({ clubCode: e.target.value })} value={this.state.clubCode} />
+        <RaisedButton label='Join' primary={true} onTouchTap={() => this.joinTheClub()} style={style} />
       </div>
     );
   }
