@@ -18,3 +18,10 @@ export function createBookClub(bookClubObj) {
     return BookClubUtils.addBookClubForUser(clubId, userId);
   };
 }
+
+export function joinTheClub(inviteCode) {
+  return async (dispatch, getState) => {
+    const userId = getState().currentUser.uid;
+    return BookClubUtils.joinTheClub(inviteCode, userId);
+  };
+}
